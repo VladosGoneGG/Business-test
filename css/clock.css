@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	background-color: darkslategray;
+}
+
+.clock {
+	position: relative;
+	width: 450px;
+	height: 450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('../public/img/clock.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 5px solid black;
+	border-radius: 50%;
+}
+
+.clock::before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: white;
+	z-index: 10;
+}
+
+.hour {
+	position: absolute;
+}
+
+.hours {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+
+.hours::before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 80px;
+	top: -10px;
+	background-color: brown;
+	z-index: 10;
+	border-radius: 6px 6px 0px 0px;
+}
+
+.minute {
+	position: absolute;
+}
+
+.minutes {
+	width: 190px;
+	height: 210px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	border-radius: 50%;
+}
+
+.minutes::before {
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 90px;
+	background-color: cornflowerblue;
+	z-index: 11;
+	border-radius: 6px 6px 0px 0px;
+}
+
+.second {
+	position: absolute;
+}
+
+.seconds {
+	width: 230px;
+	height: 230px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	border-radius: 50%;
+}
+
+.seconds::before {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 140px;
+	background-color: black;
+	z-index: 12;
+	border-radius: 6px 6px 0px 0px;
+}
+
+.controls {
+	display: flex;
+	gap: 10px;
+}
+
+button {
+	width: 200px;
+	height: 100px;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #008cba;
+	color: white;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #005f8a;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
